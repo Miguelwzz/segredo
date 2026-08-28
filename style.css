@@ -1,0 +1,612 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins', sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff758c,
+        #ff7eb3,
+        #6a11cb
+    );
+
+    background-size:400% 400%;
+
+    animation:
+    fundo 15s infinite alternate;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+/* ===========================
+   FUNDO ANIMADO
+=========================== */
+
+
+@keyframes fundo{
+
+    0%{
+        background-position:left;
+    }
+
+    100%{
+        background-position:right;
+    }
+
+}
+
+
+/* ===========================
+   LOADER
+=========================== */
+
+
+.loader{
+
+    position:fixed;
+
+    width:100%;
+    height:100vh;
+
+    background:#ff4d6d;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    animation:
+    desaparecer 2s forwards;
+
+    animation-delay:3s;
+
+}
+
+
+.loader h1{
+
+    font-size:80px;
+
+    animation:
+    pulsar 1s infinite;
+
+}
+
+
+.loader h2{
+
+    margin-top:20px;
+
+}
+
+
+
+@keyframes desaparecer{
+
+    to{
+
+        opacity:0;
+
+        visibility:hidden;
+
+    }
+
+}
+
+
+@keyframes pulsar{
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+
+
+/* ===========================
+   HEADER
+=========================== */
+
+
+header{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+
+header h1{
+
+    font-size:55px;
+
+    font-family:'Dancing Script';
+
+}
+
+
+header p{
+
+    margin:20px;
+
+    font-size:20px;
+
+}
+
+
+
+/* BOTÕES */
+
+
+button{
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+
+
+#entrar,
+#sim{
+
+    background:white;
+
+    color:#ff4d6d;
+
+}
+
+
+
+button:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.3);
+
+}
+
+
+
+/* ===========================
+   SEÇÕES VIDRO
+=========================== */
+
+
+section{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:80px auto;
+
+    padding:40px;
+
+    background:
+
+     rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.2);
+
+    animation:
+
+    aparecer 1s;
+
+}
+
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+section h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-size:35px;
+
+}
+
+
+
+/* ===========================
+   GALERIA POLAROID
+=========================== */
+
+
+.fotos{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+
+}
+
+
+.foto{
+
+    background:white;
+
+    padding:15px;
+
+    width:220px;
+
+    transform:rotate(-3deg);
+
+    transition:.5s;
+
+}
+
+
+.foto:nth-child(even){
+
+    transform:rotate(4deg);
+
+}
+
+
+.foto:hover{
+
+    transform:
+
+    scale(1.15)
+
+    rotate(0deg);
+
+    z-index:5;
+
+}
+
+
+.foto img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+}
+
+
+
+/* ===========================
+   CARTA
+=========================== */
+
+
+.carta p{
+
+    min-height:150px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    text-align:center;
+
+    font-family:'Dancing Script';
+
+}
+
+
+
+/* ===========================
+   CONTADOR
+=========================== */
+
+
+#tempo{
+
+    text-align:center;
+
+    font-size:35px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ===========================
+   LINHA DO TEMPO
+=========================== */
+
+
+.item{
+
+    background:
+
+    rgba(255,255,255,.2);
+
+    padding:25px;
+
+    margin:20px 0;
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+
+.item:hover{
+
+    transform:translateX(20px);
+
+    background:
+
+    rgba(255,255,255,.35);
+
+}
+
+
+
+/* ===========================
+   MÚSICA
+=========================== */
+
+
+#play{
+
+    display:block;
+
+    margin:auto;
+
+    background:#fff;
+
+    color:#ff4d6d;
+
+}
+
+
+
+/* ===========================
+   PEDIDO FINAL
+=========================== */
+
+
+.pedido{
+
+    text-align:center;
+
+}
+
+
+.pedido h1{
+
+    font-size:45px;
+
+    font-family:'Dancing Script';
+
+}
+
+
+.botoes{
+
+    margin-top:40px;
+
+}
+
+
+
+#nao{
+
+    background:#ddd;
+
+    color:#555;
+
+    position:relative;
+
+}
+
+
+
+/* ===========================
+   MENSAGEM FINAL
+=========================== */
+
+
+#mensagemFinal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:#ff4d6d;
+
+    z-index:999;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+
+#mensagemFinal h1{
+
+    font-size:90px;
+
+}
+
+
+
+#mensagemFinal p{
+
+    max-width:600px;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+}
+
+
+
+/* ===========================
+   CORAÇÕES
+=========================== */
+
+
+.coracao{
+
+    position:fixed;
+
+    top:100vh;
+
+    color:white;
+
+    font-size:25px;
+
+    animation:
+
+    subir 6s linear infinite;
+
+}
+
+
+@keyframes subir{
+
+    to{
+
+        transform:
+        translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* ===========================
+   RESPONSIVO CELULAR
+=========================== */
+
+
+@media(max-width:600px){
+
+
+header h1{
+
+    font-size:40px;
+
+}
+
+
+section{
+
+    padding:25px;
+
+}
+
+
+section h2{
+
+    font-size:28px;
+
+}
+
+
+.foto{
+
+    width:180px;
+
+}
+
+
+#tempo{
+
+    font-size:25px;
+
+}
+
+
+}
